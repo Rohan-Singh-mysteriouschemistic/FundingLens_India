@@ -26,10 +26,7 @@ if option == "Overall Analysis":
         selected_sector = st.selectbox("Select Sector", options=["All"] + sorted(main_obj.file['vertical'].dropna().unique().tolist()))
 
     with col3:
-        funding_min, funding_max = st.slider("Funding Amount Range (₹ Cr)", 
-                                             min_value=float(main_obj.file['Amount(in Cr)'].min()), 
-                                             max_value=float(main_obj.file['Amount(in Cr)'].max()), 
-                                             value=(float(main_obj.file['Amount(in Cr)'].min()), float(main_obj.file['Amount(in Cr)'].max())))
+        funding_min, funding_max = st.slider("Funding Amount Range (₹ Cr)", min_value=float(main_obj.file['Amount(in Cr)'].min()), max_value=float(main_obj.file['Amount(in Cr)'].max()), value=(float(main_obj.file['Amount(in Cr)'].min()), float(main_obj.file['Amount(in Cr)'].max())))
     filtered_df = main_obj.file.copy()
 
     if selected_year != "All":
